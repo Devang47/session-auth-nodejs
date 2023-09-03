@@ -47,6 +47,5 @@ export const getUserDetails = async (req: Request, res: Response) => {
   const user = await UserModel.findById(req.session.userId);
   if (!user) return res.status(404).json({ msg: "Not found" });
 
-  console.log(user);
   res.json({ user }).status(200);
 };
